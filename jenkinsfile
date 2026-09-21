@@ -1,5 +1,5 @@
-pipeline{
-    agent any{
+pipeline {
+    agent any
         stage('Build'){
             steps{
                 echo "Build Docker Image"
@@ -13,7 +13,6 @@ pipeline{
                 bat"docker run -d -p 5000:5000 --name mycontainer mypythonflaskapp"
             }
         }
-    }
     post{
         success{
             echo'Pipeline complete succesfully!'
